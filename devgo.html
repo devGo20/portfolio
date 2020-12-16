@@ -331,18 +331,16 @@
     }
 </style>
 <script>
-$(function(){
-  var lastScroll = 0;
-  $(window).scroll(function(event){ 
-      var st = $(this).scrollTop();
-      if (st > lastScroll){
-          if ($(window).scrollTop() <= 200) { 
-              $('#top').show();
+$(document).ready(function(){
+  $("#top").hide();
+  $(function () {
+      $(window).scroll(function () {
+          if ($(this).scrollTop() > 100) { 
+              $('#top').fadeIn();
+          } else {
+              $('#top').fadeOut();
           }
-      } else {
-           $('#top').hide();
-      }
-      lastScroll = st;
+      });
   });
 });
 </script>
