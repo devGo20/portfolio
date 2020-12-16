@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <title>&분의 일 프로젝트</title>
+    <script>
+        $(document).ready(function()
+        {
+          $('#top').hover(function(){
+            $(this).addClass('bounce');
+          }, function(){
+            $(this).removeClass('bounce');
+          })
+        }
+        )
+        $(function(){
+            AOS.init();
+        })
+      </script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+    <style>
+       @font-face {
+            font-family: 'SeoulNamsanM';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulNamsanM.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500;700&display=swap');
+        body {
+            font-family: 'SeoulNamsanM';
+        }
+         /* project IMG swiper */
+        .swiper-container {
+            width: 100%;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+    .swiper-container{
+        max-width: 900px;
+      height: 500px;
+    }
+
+    .swiper-slide img{
+        max-width: 100%;
+        /* width: 900px; */
+        height: auto;
+    }
+
+    li{
+        font-size: 18px;
+    }
+    .stackImg{
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    .iframeBox{
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+    }
+    iframe{
+        width: 100%;
+        position: absolute;
+        height: 100%;
+    }
+    h2,h3{
+        font-weight: 700;
+    }
+    a{
+        font-size: 20px;
+    }
+    @media ( max-width: 480px ) {
+    #container {
+      width: auto;
+    }
+    #header {
+      width: auto;
+    }
+    #home{
+      width: auto;
+    }
+    .swiper-container{
+        width: auto;
+    }
+    .imgBox{
+        width: 1150px;
+    }
+  }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="header" class="aos-init aos-animate" data-aos="flip-left" data-aos-delay="200">
+        <h1 style="font-size:3em;font-weight: bold;color: #0d6efd;width: 160px;margin: 0 auto;margin-top: 80px!important;margin-bottom: 20px;">&분의 일</h1>
+        <p style="font-size: 20px;width: 330px;margin: 0 auto;margin-bottom: 10px;font-weight: 500;">나의 지역주민과 함께하는 공동체 서비스</p>
+        <p style="font-size: 17px;width: 138px;margin: 0 auto;">2020.09 - 2020.11</p>
+        <div class="swiper-container aos-init aos-animate" data-aos="flip-left" data-aos-delay="800" style="height: 450px;">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="/img/1.png" alt=""></div>
+              <div class="swiper-slide"><img src="/img/2.png"></div>
+              <div class="swiper-slide"><img src="/img/3.png"></div>
+              <div class="swiper-slide"><img src="/img/4.png"></div>
+              <div class="swiper-slide"><img src="/img/5.png"></div>
+              <div class="swiper-slide"><img src="/img/6.png"></div>
+              <div class="swiper-slide"><img src="/img/7.png"></div>
+              <div class="swiper-slide"><img src="/img/8.png"></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+      <!-- Swiper JS -->
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+          <script>
+            var swiper = new Swiper('.swiper-container', {
+              slidesPerView: 1,
+              spaceBetween: 30,
+              loop: true,
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },
+              navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+              },
+            });
+          </script>
+          </div>
+          <blockquote style="margin-top: 50px;">
+          <p>&분의 일은 함께하는 지역 공동체 서비스를 컨셉으로 N분의 1로 나누고 AND,함께한다는 중의적인 의미를 담고 있습니다.
+              물건을 함께 사고 나누는 것 뿐만 아니라, 한걸음 나아가 관심사를 함께 나눌 수 있는 소모임(커뮤니티) 서비스 및 우리동네 지역업체들의 정보와 리뷰 서비스도 제공하여 진정한 의미의 
+              함께하는 지역공동체 서비스를 지향하고 있습니다.
+          </p>
+          <a href="https://github.com/stothey0804/andOne" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+          </svg> Github_&분의 일</a>
+        </blockquote>
+        <h2 class="ser"style="margin-top: 50px;">사용기술</h2>
+        <ul>
+        <li>위치기반 서비스</li>
+        <li>포인트 충전을 이용한 선결제 서비스</li>
+        <li>다자간 채팅 기능</li>
+    </ul>
+        <h3 style="font-size: 200%;margin-top: 50px;">기술스택</h3>
+        <div class="imgBox aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+        <img src="/img/stack.png" class="stackImg"></div>
+        <h3 style="font-size: 200%;margin-top: 50px;">담당역할</h3>
+        <ul>
+            <li>소모임(Club) 기능 전체(소모임, 게시글, 댓글) CRUD</li>
+            <li>BLOB 이미지 encoding 메서드 작성</li>
+            <li>부트스트랩을 이용한 소모임 CSS 작업</li>
+        </ul>
+        <h3 style="font-size: 200%;margin-top: 50px;">시연동영상</h3>
+        <div class="iframeBox">
+        <iframe src="https://player.vimeo.com/video/478288917" width="1200" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+        <div class="iframeBox">
+        <iframe src="https://player.vimeo.com/video/478368662" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="iframeBox">
+        <iframe src="https://player.vimeo.com/video/478288811" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="iframeBox">
+        <iframe src="https://player.vimeo.com/video/478288848" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="iframeBox">
+        <iframe src="https://player.vimeo.com/video/478288932" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+    <!-- </div> -->
+</div>
+</body>
+</html>
