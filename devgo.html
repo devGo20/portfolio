@@ -330,6 +330,22 @@
       font-weight: 700;
     }
 </style>
+<script>
+$(function(){
+  var lastScroll = 0;
+  $(window).scroll(function(event){ 
+      var st = $(this).scrollTop();
+      if (st > lastScroll){
+          if ($(window).scrollTop() <= 200) { 
+              $('#top').show();
+          }
+      } else {
+           $('#top').hide();
+      }
+      lastScroll = st;
+  });
+});
+</script>
 <title>GO!EunBin</title>
 <link rel="shortcut icon" type="image/x-icon" href="https://www.flaticon.com/svg/static/icons/svg/3022/3022243.svg">
 </head>
