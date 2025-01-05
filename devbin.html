@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고은빈 - Frontend Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            color: #2c5282;
+            margin: 2rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: #2d3748;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+        
+        h4 {
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin: 1rem 0 0.5rem 0;
+        }
+        
+        .contact-info {
+            margin: 1rem 0;
+        }
+        
+        .contact-info a {
+            color: #4299e1;
+            text-decoration: none;
+            margin-right: 1.5rem;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .job {
+            margin-bottom: 2rem;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .job-title {
+            font-weight: bold;
+            color: #2d3748;
+        }
+        
+        .job-date {
+            color: #718096;
+        }
+        
+        .tech-stack {
+            color: #4a5568;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        ul {
+            list-style-position: inside;
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .education {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>고은빈 (Eunbin Go)</h1>
+        <div>Front-end Developer</div>
+        
+        <div class="contact-info">
+            <a href="https://github.com/devGo20" target="_blank">Github</a>
+            <a href="https://velog.io/@devbin20" target="_blank">Velog</a>
+            <a href="mailto:devbin20@gmail.com">Email: devbin20@gmail.com</a>
+            <a href="tel:010-9036-3610">Phone: 010-9036-3610</a>
+        </div>
+        
+        <p>안녕하세요, "최선"을 고민하는 개발자 고은빈입니다. 저는 문제 해결 과정에서 항상 더 나은 방식을 찾기 위해 고민하며, 새로운 기술 도입을 통해 효율성과 협업 효과를 높이는데 열정을 갖고 있습니다. 예를 들어, TanStack Query를 활용해 API 호출을 효율적으로 관리하고, 프로젝트 성능과 협업 속도를 크게 개선한 경험이 있습니다.</p>
+        
+        <p>코드는 단순히 기능 구현을 넘어, 동료들이 이해하고 확장하기 쉬운 구조로 작성해야 한다고 믿습니다. 특히, 최근에는 비즈니스 로직과 컴포넌트를 분리하여 재사용성과 유지보수를 동시에 강화하는 구조에 관심을 두고 있습니다. 이러한 접근은 장기적인 프로젝트 안정성과 확장성을 위한 필수요소라고 생각합니다.</p>
+        
+        <p>프로젝트 개발 과정은 팀과 함께 성장하는 과정이라고 믿습니다. 동료들과 자유롭게 의견을 나누고, 원활한 소통을 통해 더 나은 결과를 만들어내는 것이 제 가치관입니다. 코드 리뷰를 통해 팀원들과 피드백을 주고받으며, 개인과 팀 모두의 성장을 추구합니다.</p>
+        
+        <p>현재의 문제를 해결하는데 그치지 않고, 프로젝트의 장기적인 발전을 고민하는 개발자로서, 팀과 함께 더 큰 가치를 만들어가는 기회를 얻고 싶습니다.</p>
+    </header>
+
+    <section>
+        <h2>Experience</h2>
+        
+        <div class="job">
+            <div class="job-header">
+                <h3>리본즈 / Frontend Engineer</h3>
+                <div class="job-date">2022.01 - 2024.07</div>
+            </div>
+            <div class="tech-stack">사용 기술: JavaScript, React.js, jQuery, Ruby on Rails</div>
+            <p>기존 ERB(Embedded Ruby) 기반 화면을 React 컴포넌트로 전환하는 작업을 주로 해왔습니다.</p>
+
+            <h4>상품 상세 페이지 개발</h4>
+            <ul>
+                <li>스토어 & 빈티지 상세 페이지 전체 개발</li>
+                <li>모든 구성요소 및 컴포넌트 신규 개발</li>
+                <li>TanStack-query 도입하여 데이터 캐싱 구현, 탭 클릭 시 캐시 사용하여 API 중복 호출 방지, 로딩 속도 개선</li>
+                <li>리뷰 영역 컴포넌트화로 레거시(ERB) 페이지와 호환성 확보</li>
+                <li>페이지 로딩 시간 단축 및 API 호출 수 65% 감소</li>
+            </ul>
+
+            <h4>이벤트 페이지 개발</h4>
+            <ul>
+                <li>그룹 이벤트 페이지, 필터 이벤트 페이지 분리하여 개발</li>
+                <li>TanStack-query 적용</li>
+                <li>기존 LNB 페이지에서 사용되던 필터 컴포넌트 확장하여 이벤트 페이지 컴포넌트에 사용 → 필터 컴포넌트 재설계로 재사용성 향상</li>
+                <li>상품 상세 방문 후 목록 페이지 전환 시 불필요한 API 호출로 인한 성능 저하 → SessionStorage 활용한 상품 리스트 및 필터 상태 캐싱</li>
+            </ul>
+
+            <h4>상품 리스트 컴포넌트 개발</h4>
+            <ul>
+                <li>2grid, 3grid, list 등 상품 리스트 컴포넌트화 및 상품 컴포넌트화 진행</li>
+                <li>좋아요 버튼과 이벤트 라벨 추가 개발</li>
+            </ul>
+
+            <h4>모달 Design System</h4>
+            <p>ERB와 React가 혼용된 환경에서 중복 코드와 일관성 없는 UI/UX 문제</p>
+            <ul>
+                <li>ReactPortal 기반 통합 모달 시스템 설계</li>
+                <li>ERB 페이지 내 React 공용 컴포넌트 모달 사용 가능하도록 설계</li>
+                <li>모달 관련 코드베이스 60% 감소</li>
+                <li>개발 생산성 2배 향상</li>
+                <li>디자인 시스템 적용으로 사용자 경험 일관성 확보</li>
+                <li>컴포넌트 props로 full 모달, bottom 모달 등 다양한 형태로 렌더링 및 스타일이 적용되도록 구성</li>
+            </ul>
+
+            <h4>렌트 취소 수수료 프로세스 화면 개발</h4>
+            <ul>
+                <li>렌트 취소 신청 시 취소 안내 및 취소 수수료 결제 모달 개발</li>
+                <li>렌트 취소 신청 시 모달이 열리며 취소 사유 선택 -> 취소 수수료 안내 및 결제 -> 렌트 취소 확인 모달 -> 취소 완료로 이뤄졌으며 프로세스마다 다른 내용이 보여야 했으므로 state를 상수값으로 처리 각 단계별 컴포넌트 렌더링 처리</li>
+            </ul>
+
+            <h4>보안 강화 시스템 구축</h4>
+            <p>다양한 로그인 방식과 취약한 비밀번호로 인한 보안 위험</p>
+            <ul>
+                <li>쿠키 기반 로그인 방식 추적 가능하도록 개발</li>
+                <li>로그인 시 디바이스 아이디, 최근 로그인 방법을 데이터베이스에 저장하고 있지 않아 알 수 있는 방법이 없었습니다. 그리하여 서버단에서 로그인 성공 로직에 최근 로그인 방식 관련 쿠키 생성</li>
+                <li>추후 로그인 화면 접근 시 해당 쿠키 여부 확인하여 툴팁 노출 적용</li>
+                <li>비밀번호 정규식에 맞는 피드백 제공하는 UI 개발</li>
+            </ul>
+
+            <h4>렌트 취소 프로세스 자동화 시스템 구축</h4>
+            <ul>
+                <li>상태머신(State Machine) 패턴을 활용한 다단계 취소 프로세스 자동화 → 취소 사유 선택 → 수수료 안내/결제 → 최종 확인 → 완료</li>
+                <li>각 단계별 상태를 상수로 관리하여 프로세스 흐름 제어</li>
+                <li>동적 컴포넌트 렌더링으로 단계별 UI 최적화</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <h3>펄어비스 / Backend Engineer 인턴</h3>
+                <div class="job-date">2021.03 - 2021.06 (3m)</div>
+            </div>
+            <div class="tech-stack">사용 기술: C#, MS-SQL, ASP.NET Core, IIS, jQuery</div>
+            <p>검은사막 웹 콘텐츠 및 관리자 페이지 개발</p>
+            <p>SSR 프로젝트였으며 JavaScript 및 jQuery를 통해 화면단 개발 및 C# 백엔드 개발 프로젝트 수행</p>
+            <ul>
+                <li>관리자 페이지 통합 점검 관리 게시판 개발</li>
+                <li>관리자 페이지 사용자 개인정보 관리 게시판 개발</li>
+                <li>답글형 게시판 개발</li>
+                <li>사용자 커뮤니티 랭킹 순위 페이지</li>
+                <li>사용자 프로필 이미지 업로드 서비스</li>
+                <li>질답형 게시판</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Skill</h2>
+        
+        <div class="skill-section">
+            <h3>Web</h3>
+            <ul>
+                <li>Chrome, Safari 등 다양한 운영체제와 브라우저 지원이 가능합니다.</li>
+                <li>모바일 브라우저에서 발생하는 문제를 해결하는데 많은 경험을 가지고 있습니다.</li>
+                <li>모바일 내 웹뷰 환경에서 어플리케이션 운영 경험이 있습니다.</li>
+            </ul>
+        </div>
+
+        <div class="skill-section">
+            <h3>JavaScript</h3>
+            <ul>
+                <li>JavaScript 사용에 익숙합니다.</li>
