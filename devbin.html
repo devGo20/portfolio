@@ -1,333 +1,1160 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>고은빈 - Frontend Developer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>고은빈</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        .navbar {
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            width: 100px;
-            background-color: #f7fafc;
-            border: 1px solid #e2e8f0;
-            padding: 1rem;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .navbar li{
-            list-style-type: none;
-        }
-        .navbar a {
-            display: block;
-            margin-bottom: 1rem;
-            color: #2c5282;
-            text-decoration: none;
-        }
+        /* Base Styles */
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --accent-color: #4895ef;
+  --text-color: #333;
+  --text-light: #666;
+  --bg-color: #fff;
+  --bg-light: #f8f9fa;
+  --border-color: #e9ecef;
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --danger-color: #f44336;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --border-radius: 8px;
+  --container-width: 1200px;
+}
 
-        .navbar a:hover {
-            text-decoration: underline;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        header {
-            margin-bottom: 2rem;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            color: #2c5282;
-            margin: 2rem 0 1rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #e2e8f0;
-        }
-        
-        h3 {
-            font-size: 1.4rem;
-            color: #2d3748;
-            margin: 1.5rem 0 0.5rem 0;
-        }
-        
-        h4 {
-            font-size: 1.2rem;
-            color: #4a5568;
-            margin: 1rem 0 0.5rem 0;
-        }
-        
-        .contact-info {
-            margin: 1rem 0;
-        }
-        
-        .contact-info a {
-            color: #4299e1;
-            text-decoration: none;
-            margin-right: 1.5rem;
-        }
-        
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        
-        .job {
-            margin-bottom: 2rem;
-        }
-        
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }
-        
-        .job-title {
-            font-weight: bold;
-            color: #2d3748;
-        }
-        
-        .job-date {
-            color: #718096;
-        }
-        
-        .tech-stack {
-            color: #4a5568;
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-        
-        ul {
-            list-style-position: inside;
-            margin-left: 1rem;
-            margin-bottom: 1rem;
-        }
-        
-        .skill-section {
-            margin-bottom: 1.5rem;
-        }
-        
-        .education {
-            margin-bottom: 1rem;
-        }
+html {
+  scroll-behavior: smooth;
+}
 
-        p {
-            margin-bottom: 1rem;
-        }
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+.highlight {
+  color: var(--primary-color);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.secondary-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--text-color);
+  border-radius: 3px;
+  transition: var(--transition);
+}
+
+/* Hero Section */
+.hero {
+  padding: 8rem 0 5rem;
+  background-color: var(--bg-light);
+}
+
+.hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 400px;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+
+/* About Section */
+.about {
+  padding: 5rem 0;
+  background-color: var(--bg-color);
+}
+
+.about-content {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+}
+
+.about-values {
+  flex: 1;
+}
+
+.about-values h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.about-values ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-values li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.about-values i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-top: 0.25rem;
+}
+
+.about-values h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-values p {
+  color: var(--text-light);
+}
+
+/* Experience Section */
+.experience {
+  padding: 5rem 0;
+  background-color: var(--bg-light);
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background-color: var(--primary-color);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.timeline-date {
+  width: 45%;
+  text-align: right;
+  padding-right: 2rem;
+}
+
+.timeline-date h3 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.timeline-content {
+  width: 45%;
+  padding-left: 2rem;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.timeline-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content h4 {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.timeline-content p {
+  margin-bottom: 1rem;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tech-stack span {
+  background-color: var(--bg-light);
+  color: var(--primary-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Projects Section */
+.projects {
+  padding: 5rem 0;
+  background-color: var(--bg-color);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.project-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-period {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.project-content p {
+  margin-bottom: 1.5rem;
+}
+
+.project-highlights {
+  margin-bottom: 1.5rem;
+}
+
+.project-highlights h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.project-highlights ul {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.project-highlights li {
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+/* Skills Section */
+.skills {
+  padding: 5rem 0;
+  background-color: var(--bg-light);
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.skill-category h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.skill-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-icon {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+.skill-icon i {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+}
+
+.skill-item span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Contact Section */
+.contact {
+  padding: 5rem 0;
+  background-color: var(--bg-color);
+}
+
+.contact-content {
+  display: flex;
+  gap: 3rem;
+}
+
+.contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-item i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.contact-item a:hover {
+  color: var(--primary-color);
+}
+
+.contact-form {
+  flex: 2;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+/* Footer */
+footer {
+  background-color: var(--text-color);
+  color: white;
+  padding: 2rem 0;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  background-color: var(--primary-color);
+}
+
+.social-links i {
+  font-size: 1.2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .contact-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  .hero .container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-content p {
+    margin: 0 auto 2rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image img {
+    max-width: 300px;
+  }
+
+  .timeline::before {
+    left: 30px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+  }
+
+  .timeline-dot {
+    left: 30px;
+  }
+
+  .timeline-date,
+  .timeline-content {
+    width: 100%;
+    text-align: left;
+    padding-left: 60px;
+  }
+
+  .timeline-date {
+    margin-bottom: 1rem;
+  }
+
+  .project-grid {
+    gap: 2rem;
+  }
+
+  .skills-container {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-image img {
+    max-width: 250px;
+  }
+
+  .skill-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
     </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="#introduction">소개</a></li>
-            <li><a href="#experience">경력</a></li>
-            <li><a href="#skill">기술</a></li>
-        </ul>
+  <header>
+    <nav class="container">
+      <div class="logo">
+        <a href="#home">Eunbin Go</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
-    <header id="introduction">
-        <h1>고은빈 (Eunbin Go)</h1>
-        <div>Front-end Developer</div>
-        
-        <div class="contact-info">
-            <a href="https://github.com/devGo20" target="_blank">Github</a>
-            <a href="https://velog.io/@devbin20" target="_blank">Velog</a>
-            <a href="mailto:devbin20@gmail.com">Email: devbin20@gmail.com</a>
-            <a href="tel:010-9036-3610">Phone: 010-9036-3610</a>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>고은빈 <span class="highlight">(Eunbin Go)</span></h1>
+          <h2>Front-end Developer</h2>
+          <p>안녕하세요! "최선"을 고민하는 개발자 고은빈입니다.</p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn primary-btn">프로젝트 보기</a>
+            <a href="#contact" class="btn secondary-btn">연락하기</a>
+          </div>
         </div>
-        
-        <p>안녕하세요, "최선"을 고민하는 개발자 고은빈입니다. 저는 문제 해결 과정에서 항상 더 나은 방식을 찾기 위해 고민하며, 새로운 기술 도입을 통해 효율성과 협업 효과를 높이는데 열정을 갖고 있습니다. 예를 들어, TanStack Query를 활용해 API 호출을 효율적으로 관리하고, 프로젝트 성능과 협업 속도를 크게 개선한 경험이 있습니다.</p>
-        
-        <p>코드는 단순히 기능 구현을 넘어, 동료들이 이해하고 확장하기 쉬운 구조로 작성해야 한다고 믿습니다. 특히, 최근에는 비즈니스 로직과 컴포넌트를 분리하여 재사용성과 유지보수를 동시에 강화하는 구조에 관심을 두고 있습니다. 이러한 접근은 장기적인 프로젝트 안정성과 확장성을 위한 필수요소라고 생각합니다.</p>
-        
-        <p>프로젝트 개발 과정은 팀과 함께 성장하는 과정이라고 믿습니다. 동료들과 자유롭게 의견을 나누고, 원활한 소통을 통해 더 나은 결과를 만들어내는 것이 제 가치관입니다. 코드 리뷰를 통해 팀원들과 피드백을 주고받으며, 개인과 팀 모두의 성장을 추구합니다.</p>
-        
-        <p>현재의 문제를 해결하는데 그치지 않고, 프로젝트의 장기적인 발전을 고민하는 개발자로서, 팀과 함께 더 큰 가치를 만들어가는 기회를 얻고 싶습니다.</p>
-    </header>
-
-    <section id="experience">
-        <h2>Experience</h2>
-        
-        <div class="job">
-            <div class="job-header">
-                <h3>리본즈 / Frontend Engineer</h3>
-                <div class="job-date">2022.01 - 2024.07</div>
-            </div>
-            <div class="tech-stack">사용 기술: JavaScript, React.js, Axios, TanStack-Query, jQuery, Ruby on Rails</div>
-            <p>기존 ERB(Embedded Ruby) 기반 화면을 React 컴포넌트로 전환하는 작업을 주로 해왔습니다. 
-            </p>
-
-            <h4>ERB 기반 레거시 코드의 React 전환 프로젝트 리드</h4>
-            <a href="https://www.reebonz.co.kr/products/16412765" target="_blank">상품 상세 페이지 직접 보기</a>
-            <ul>
-                <li>스토어 & 빈티지 상세 페이지 전체 개발</li>
-                <li>모든 구성요소 및 컴포넌트 신규 개발</li>
-                <li>TanStack-query 도입하여 데이터 캐싱 구현, 탭 클릭 시 캐시 사용하여 API 중복 호출 방지, 로딩 속도 개선</li>
-                <li>리뷰 영역 React 컴포넌트화로 레거시(ERB) 페이지와 호환성 확보</li>
-                <li>페이지 로딩 시간 단축 및 API 호출 수 65% 감소</li>
-            </ul>
-
-            <h4>이벤트 페이지 개발</h4>
-            <p>
-                기존 기획전 페이지는 새상품, 빈티지, 렌트로 서비스별로 이벤트 ERB 페이지를 가지고 있었습니다. 이로 인해 유지보수가 어려웠습니다. 
-                필터 검색 기능이 있는 기획전 페이지는 상세 페이지 방문 후 다시 기획전 페이지로 돌아올 때, 필터 상태가 초기화되며 서버 호출을 반복하는 성능 저하 문제가 있었습니다.
-            </p>            
-            <ul>
-                <li><a href="https://www.reebonz.co.kr/events/28635">그룹 이벤트 페이지</a>, <a href="https://www.reebonz.co.kr/events/32527">필터 이벤트 페이지</a> 분리하여 개발</li>
-                <li>TanStack-query 적용</li>
-                <li>기존 LNB 페이지의 필터 컴포넌트를 확장하여, 기획전 페이지에서도 사용 가능하도록 확장하여 설계.</li>
-                <li>필터 옵션 추가 및 상태 관리 로직을 통합하여 유지보수성을 향상.</li>
-                <li>서비스별 맞춤형 필터링 옵션 구현 및 필터 조합 로직 최적화를 진행.</li>
-                <li>상품 상세 방문 후 목록 페이지 전환 시 불필요한 API 호출로 인한 성능 저하 → SessionStorage 활용한 상품 리스트 및 필터 상태 캐싱</li>
-                <li>서비스별 특성을 고려한 UI/UX 설계.</li>
-            </ul>
-
-            <h4>모달 Design System</h4>
-            <p>ERB와 React가 혼용된 환경에서 중복 코드와 일관성 없는 UI/UX 문제</p>
-            <ul>
-                <li>통합 모달 시스템 설계</li>
-                <li>ERB 페이지 내 React 공용 컴포넌트 모달 사용 가능하도록 설계</li>
-                <li>모달 관련 코드베이스 60% 감소</li>
-                <li>개발 생산성 2배 향상</li>
-                <li>UI/UX 일관성 확보로 사용자 만족도 증가</li>
-                <li>컴포넌트 props로 full 모달, bottom 모달 등 다양한 형태로 렌더링 및 스타일이 적용되도록 구성</li>
-            </ul>
-
-            <h4>렌트 취소 프로세스 자동화 시스템 구축</h4>
-            <ul>
-                <li>개발상태 머신(State Machine) 패턴을 활용한 다단계 취소 프로세스 자동화</li> 
-                <li>→ 취소 사유 선택 → 수수료 안내/결제 → 최종 확인 → 완료</li>
-                <li>각 단계별 상태를 상수로 관리하여 프로세스 흐름 제어</li>
-                <li>동적 컴포넌트 렌더링으로 단계별 UI 최적화</li>
-            </ul>
-
-            <h4>보안 강화 시스템 구축</h4>
-            <p>다양한 로그인 방식과 취약한 비밀번호로 인한 보안 위험</p>
-            <ul>
-                <li>쿠키 기반 로그인 방식 추적 가능하도록 개발</li>
-                <li>로그인 시 디바이스 아이디, 최근 로그인 방법을 데이터베이스에 저장하고 있지 않아 알 수 있는 방법이 없어 서버단에서 로그인 성공 로직에 최근 로그인 방식 관련 쿠키 생성</li>
-                <li>추후 로그인 화면 접근 시 해당 쿠키 여부 확인하여 툴팁 노출 적용</li>
-                <li>비밀번호 정규식에 맞는 피드백 제공하는 UI 개발</li>
-            </ul>
+        <div class="hero-image">
+          <img src="/placeholder.svg?height=400&width=400" alt="고은빈 프로필 이미지">
         </div>
-
-        <div class="job">
-            <div class="job-header">
-                <h3>펄어비스 / Backend Engineer 인턴</h3>
-                <div class="job-date">2021.03 - 2021.06 (3m)</div>
-            </div>
-            <div class="tech-stack">사용 기술: C#, MS-SQL, ASP.NET Core, IIS, jQuery</div>
-            <p>검은사막 웹 콘텐츠 및 관리자 페이지 개발</p>
-            <p>SSR 프로젝트였으며 JavaScript 및 jQuery를 통해 화면단 개발 및 C# 백엔드 개발 프로젝트 수행</p>
-            <ul>
-                <li>관리자 페이지 통합 점검 관리 게시판 개발</li>
-                <li>관리자 페이지 사용자 개인정보 관리 게시판 개발</li>
-                <li>답글형 게시판 개발</li>
-                <li>사용자 커뮤니티 랭킹 순위 페이지</li>
-                <li>사용자 프로필 이미지 업로드 서비스</li>
-                <li>질답형 게시판</li>
-            </ul>
-        </div>
-        <div class="job">
-            <div class="job-header">
-                <h3>팀 프로젝트 - &분의 일</h3>
-                <div class="job-date">2020.09 - 2020.11 (3m)</div>
-            </div>
-            <div class="tech-stack">사용 기술: Java, Spring Framework, bootstrap, css, html, jQuery</div>
-            <p>&분의 일 소모임 섹션 백엔드, 프론트엔드 개발 담당</p>
-            <p>Java Programming 과정 수료 중 만든 파이널 프로젝트로 자세한 설명 및 시안 동영상은
-                 <a href="https://devgo20.github.io/portfolio/andone.html">해당 페이지</a>에서 확인 가능합니다.</p>
-        </div>
+      </div>
     </section>
 
-    <section id="skill">
-        <h2>Skill</h2>
-        
-        <div class="skill-section">
-            <h3>Web</h3>
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>문제 해결 과정에서 항상 최선일까를 고민하며, 새로운 기술이나 접근 방식을 도입해 효율성을 높이는 데 관심이 많습니다. 예를 들어, 이전 프로젝트에서는 TanStack-Query를 도입해 API 호출을 효율적으로 관리하여 성능을 최적화하고 협업 효율을 높인 경험이 있습니다.</p>
+            <p>코드를 작성하는 것은 단순히 기능 구현을 넘어 동료 개발자들이 이해하고 확장하기 쉬운 구조를 만드는 것이라고 생각합니다. 최근, 비즈니스 로직과 컴포넌트를 분리하여 구현하는 것에 관심이 많으며 이 구조는 함수의 재사용성은 물론 유지보수 및 확장성을 높이며 효율성도 함께 가진다고 생각합니다.</p>
+            <p>개발은 혼자가 아닌 팀과 함께하는 과정이라고 믿습니다. 문제 해결을 위해 동료들과 자유롭게 의견을 나누고 원활한 소통을 통해 결과 도출이 가능하다고 믿습니다. 더하여 코드리뷰를 선호합니다. 팀원들의 생각을 듣고 피드백을 주고 받으며 더 나은 코드를 추구합니다.</p>
+          </div>
+          <div class="about-values">
+            <h3>My Values</h3>
             <ul>
-                <li>Chrome, Safari, Samsung browser 등 다양한 브라우저와 운영체제 지원이 가능합니다.</li>
-                <li>모바일 브라우저에서 발생하는 문제를 해결하는데 많은 경험을 가지고 있습니다.</li>
-                <li>모바일 내 웹뷰 환경에서 어플리케이션 운영 경험이 있습니다.</li>
+              <li>
+                <i class="fas fa-lightbulb"></i>
+                <div>
+                  <h4>최적화 추구</h4>
+                  <p>항상 더 나은 방법을 고민하고 효율적인 코드를 작성합니다.</p>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-code-branch"></i>
+                <div>
+                  <h4>확장성 중시</h4>
+                  <p>미래의 변화를 고려한 유연하고 확장 가능한 코드 구조를 설계합니다.</p>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-users"></i>
+                <div>
+                  <h4>협업 중심</h4>
+                  <p>팀과의 소통을 통해 더 나은 결과물을 만들어냅니다.</p>
+                </div>
+              </li>
             </ul>
+          </div>
         </div>
-
-        <div class="skill-section">
-            <h3>JavaScript</h3>
-            <ul>
-                <li>JavaScript 사용에 익숙합니다.</li>
-                <li>레거시 코드 리팩터링이 가능합니다.</li>
-            </ul>
-        </div>
-
-        <div class="skill-section">
-            <h3>React</h3>
-            <ul>
-                <li>React 훅을 사용할 줄 알며 함수 컴포넌트를 주로 만듭니다.</li>
-                <li>컴포넌트 재사용성을 고려한 아키텍처 설계</li>
-                <li>Suspense 활용 가능</li>
-                <li>비즈니스 로직과 컴포넌트를 분리하여 구현할 수 있습니다.</li>
-                <li>TanStack-Query를 활용한 서버 상태 관리</li>
-            </ul>
-        </div>
-
-        <div class="skill-section">
-            <h3>Ruby</h3>
-            <ul>
-                <li>코드 해석이 가능하며 전반적인 프로젝트 프로세스를 이해할 수 있습니다.</li>
-                <li>정의되어 있는 메소드를 사용하여 백엔드 개발이 가능합니다.</li>
-                <li>API에 필요한 데이터 추가 및 변경할 수 있습니다.</li>
-            </ul>
-        </div>
-
-        <div class="skill-section">
-            <h3>Java with Spring Framework</h3>
-            <ul>
-                <li>게시판, 게시글, 댓글 CRUD를 구현할 수 있습니다.</li>
-                <li>BLOB 이미지 encoding 메서드를 작성했습니다.</li>
-            </ul>
-            
-            
-        </div>
-        <div class="skill-section">
-            <h3>etc</h3>
-            <ul>
-                <li>Figma를 통한 디자인 시안 활용 경험</li>
-                <li>VS Code를 통한 효율적인 개발 환경 구축 능력</li>
-            </ul>
-            
-            
-        </div>
-
+      </div>
     </section>
 
-    <section>
-        <h2>Education</h2>
-        
-        <div class="education">
-            <div>
-                <h3>방송통신대학교 컴퓨터과학과</h3>
-                <div class="job-date">2022.09 - ing (2025.08 졸업 예정)</div>
+    <section id="experience" class="experience">
+      <div class="container">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">
+              <h3>2022.01 - 2024.07</h3>
             </div>
-        </div>
-
-        <div class="education">
-            <div>
-                <h3>비트캠프 / Java Web Programming 과정</h3>
-                <div class="job-date">2020.06 - 2020.11</div>
+            <div class="timeline-content">
+              <h3>Frontend Engineer</h3>
+              <h4>리본즈 (Ribonz)</h4>
+              <p>기존 ERB(Embedded Ruby) 기반 화면을 React 컴포넌트로 전환하여 유지보수성과 사용자 경험을 개선했습니다.</p>
+              <div class="tech-stack">
+                <span>JavaScript</span>
+                <span>React.js</span>
+                <span>jQuery</span>
+                <span>Ruby on Rails</span>
+                <span>TanStack-query</span>
+                <span>SCSS</span>
+              </div>
             </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">
+              <h3>2021.03 - 2021.06</h3>
+            </div>
+            <div class="timeline-content">
+              <h3>Backend Engineer Intern</h3>
+              <h4>펄어비스 (Pearl Abyss)</h4>
+              <p>검은 사막 웹 콘텐츠 및 관리자 페이지 개발. SSR 프로젝트였으며 JavaScript 및 jQuery를 통해 화면단 개발 및 C# 백엔드 개발 프로젝트 수행했습니다.</p>
+              <div class="tech-stack">
+                <span>C#</span>
+                <span>MS-SQL</span>
+                <span>ASP.NET Core</span>
+                <span>IIS</span>
+                <span>jQuery</span>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="/placeholder.svg?height=300&width=500" alt="상품 상세 페이지 프로젝트">
+            </div>
+            <div class="project-content">
+              <h3>상품 상세 페이지 React 전환 프로젝트</h3>
+              <p class="project-period">2023.08 - 2023.11 (4개월)</p>
+              <p>ERB 기반 레거시 코드를 React 컴포넌트로 전환하여 페이지 로딩 속도 35% 개선 및 API 호출 수 60% 감소</p>
+              <div class="project-highlights">
+                <h4>주요 성과:</h4>
+                <ul>
+                  <li>TanStack-query를 도입하여 탭 간 전환 시 캐시를 활용한 API 중복 호출 방지 로직 구현</li>
+                  <li>스토어 및 빈티지 상세 페이지의 핵심 UI/UX 요소 15개 컴포넌트 설계 및 개발</li>
+                  <li>리뷰 탭 영역 모듈화를 통해 별도 개발 없이 렌트 상세 페이지에 즉시 적용</li>
+                  <li>지연 로딩 및 Suspense 기법을 적용해 페이지 로딩 성능 개선</li>
+                </ul>
+              </div>
+              <div class="tech-stack">
+                <span>React.js</span>
+                <span>TanStack-query</span>
+                <span>JavaScript</span>
+                <span>SCSS</span>
+                <span>CSS module</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="/placeholder.svg?height=300&width=500" alt="전사 공통 모달 시스템 프로젝트">
+            </div>
+            <div class="project-content">
+              <h3>전사 공통 모달 시스템 구축 프로젝트</h3>
+              <p class="project-period">2023.07 - 2023.10 (4개월)</p>
+              <p>이원화된 모달 시스템(ERB/React)을 통합하여 개발 생산성 60% 향상 및 UI 일관성 확보로 사용자 만족도 증진</p>
+              <div class="project-highlights">
+                <h4>주요 성과:</h4>
+                <ul>
+                  <li>UX 디자이너와 협업하여 전사 모달 디자인 시스템 설계 및 기존 ERB 페이지에서도 호출 가능한 React 모달 컴포넌트 개발</li>
+                  <li>레거시 모달 코드를 분석하여 유형(full, bottom, alert, confirm 등)으로 표준화 및 props 설계로 재사용성 확보</li>
+                  <li>레거시 ERB 환경에서 React 모달 렌더링을 위한 모듈 개발로 기술 스택 간 호환성 문제 해결</li>
+                  <li>문서화 및 내부 기술 발표로 5명의 개발자들의 신규 모달 시스템 적용 지원</li>
+                </ul>
+              </div>
+              <div class="tech-stack">
+                <span>React.js</span>
+                <span>JavaScript</span>
+                <span>React Portal</span>
+                <span>SCSS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="/placeholder.svg?height=300&width=500" alt="이벤트 페이지 프로젝트">
+            </div>
+            <div class="project-content">
+              <h3>이벤트 페이지 React 전환 프로젝트</h3>
+              <p class="project-period">2023.03 - 2023.07 (5개월)</p>
+              <p>상세 페이지 클릭 후 이벤트 페이지로 백버튼 사용 시 API 다중 호출 문제 해결로 페이지 전환 속도 75% 개선</p>
+              <div class="project-highlights">
+                <h4>주요 성과:</h4>
+                <ul>
+                  <li>세션 스토리지를 활용한 상품 리스트 및 필터 정보 캐싱 전략 수립으로 불필요한 API 호출 90% 감소</li>
+                  <li>그룹 이벤트 페이지와 필터 이벤트 페이지의 코드베이스 분리로 유지보수성 향상</li>
+                  <li>TanStack-query의 쿼리 키 전략 재설계로 백버튼 사용 시 API 재호출 방지 및 사용자 경험 개선</li>
+                  <li>기존 LNB 컴포넌트 확장성 분석 및 재설계를 통해 이벤트 페이지 필터 요구사항 수용, 코드 중복 60% 감소</li>
+                </ul>
+              </div>
+              <div class="tech-stack">
+                <span>React.js</span>
+                <span>TanStack-query</span>
+                <span>세션 스토리지</span>
+                <span>SCSS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="/placeholder.svg?height=300&width=500" alt="사용자 인증 시스템 프로젝트">
+            </div>
+            <div class="project-content">
+              <h3>사용자 인증 시스템 개선 프로젝트</h3>
+              <p class="project-period">2024.01 - 2024.04 (4개월)</p>
+              <p>KCP 본인인증 모듈 도입 및 로그인 경험 개선으로 인증 성공률 향상 및 계정 보안 강화</p>
+              <div class="project-highlights">
+                <h4>주요 성과:</h4>
+                <ul>
+                  <li>KCP 본인인증 모듈을 구매 프로세스 및 회원정보 수정 플로우에 적용, 법적 규제 준수 및 보안 강화</li>
+                  <li>서버 코드 분석으로 로그인 방식별 쿠키 기반 추적 시스템 구현, 최근 로그인 방법 안내 툴팁 개발</li>
+                  <li>비밀번호 변경 유도 페이지 개발 및 유효성 검사 로직 구현으로 취약 계정 비밀번호 변경 달성</li>
+                  <li>사용자 피드백을 반영한 인증 관련 토스트 메시지 및 안내 문구 최적화로 사용자 이해도 향상</li>
+                </ul>
+              </div>
+              <div class="tech-stack">
+                <span>KCP 본인인증 모듈</span>
+                <span>React.js</span>
+                <span>쿠키 기반 사용자 추적</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3>Frontend</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fab fa-react"></i>
+                </div>
+                <span>React.js</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fab fa-js"></i>
+                </div>
+                <span>JavaScript</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fab fa-html5"></i>
+                </div>
+                <span>HTML5</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fab fa-css3-alt"></i>
+                </div>
+                <span>CSS3/SCSS</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <span>TanStack-query</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fab fa-jquery"></i>
+                </div>
+                <span>jQuery</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Backend</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fas fa-gem"></i>
+                </div>
+                <span>Ruby on Rails</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fas fa-database"></i>
+                </div>
+                <span>MS-SQL</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fab fa-windows"></i>
+                </div>
+                <span>C#/.NET</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Tools & Others</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fab fa-git-alt"></i>
+                </div>
+                <span>Git</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fab fa-figma"></i>
+                </div>
+                <span>Figma</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fas fa-server"></i>
+                </div>
+                <span>RESTful API</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <span>반응형 웹 디자인</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <p>devbin20@gmail.com</p>
+            </div>
+            <div class="contact-item">
+              <i class="fab fa-github"></i>
+              <a href="https://github.com/devGo20" target="_blank" rel="noopener noreferrer">github.com/devGo20</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-blog"></i>
+              <a href="https://velog.io/@devbin20" target="_blank" rel="noopener noreferrer">velog.io/@devbin20</a>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form>
+              <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="message">메시지</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn primary-btn">메시지 보내기</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 고은빈 (Eunbin Go). All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://github.com/devGo20" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+        <a href="https://velog.io/@devbin20" target="_blank" rel="noopener noreferrer"><i class="fas fa-blog"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple JavaScript for mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      
+      hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+      });
+
+      // Close mobile menu when clicking on a nav link
+      const navItems = document.querySelectorAll('.nav-links a');
+      navItems.forEach(item => {
+        item.addEventListener('click', function() {
+          navLinks.classList.remove('active');
+          hamburger.classList.remove('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
